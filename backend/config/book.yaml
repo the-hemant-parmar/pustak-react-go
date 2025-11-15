@@ -1,0 +1,5 @@
+mongo:
+  uri: "mongodb://root:rootpassword@localhost:27017"
+  database: "book_service"
+server:
+  addr: ":8081"
