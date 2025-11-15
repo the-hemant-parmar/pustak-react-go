@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-label="Closed book icon with Hindi letters 'पु'">
+  <defs>
+    <linearGradient id="coverGrad" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#2b6cb0"/>
+      <stop offset="1" stop-color="#1e3a8a"/>
+    </linearGradient>
+    <filter id="bookShadow" x="-40%" y="-40%" width="180%" height="180%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+
+  <!-- subtle background -->
+  <rect width="64" height="64" rx="8" fill="none"/>
+
+  <!-- book cover (front-facing) -->
+  <g filter="url(#bookShadow)">
+    <!-- front cover main -->
+    <rect x="8" y="6" width="40" height="52" rx="3.5" fill="url(#coverGrad)" stroke="#133e7a" stroke-opacity="0.12" />
+    <!-- slight inner highlight -->
+    <rect x="10" y="8" width="36" height="48" rx="2.5" fill="none" stroke="rgba(255,255,255,0.06)"/>
+    <!-- spine edge (left) -->
+    <rect x="6" y="6" width="4" height="52" rx="1.8" fill="#163866" />
+    <!-- right edge to suggest thickness -->
+    <polygon points="48,6 52,9 52,55 48,58" fill="#102a55" opacity="0.08"/>
+  </g>
+
+  <!-- small bookmark ribbon at top -->
+  <path d="M34 6 L34 16 L30 13 L26 16 L26 6 Z" fill="#ffd480" fill-opacity="0.95"/>
+
+  <!-- title / letters on cover -->
+  <text x="28" y="36" text-anchor="middle" font-family="'Noto Sans Devanagari', 'Mangal', 'Devanagari', sans-serif"
+        font-size="18" font-weight="700" fill="#ffffff" paint-order="stroke fill">
+    <!-- 'पु' in Devanagari -->
+    <tspan dy="-2">पु</tspan>
+  </text>
+
+  <!-- subtle bottom shadow line -->
+  <ellipse cx="30" cy="59" rx="18" ry="2.4" fill="#000" opacity="0.06"/>
+</svg>
