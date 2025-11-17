@@ -1,3 +1,4 @@
+// Package server will create a server that will listen for book related queries
 package server
 
 import (
@@ -5,6 +6,7 @@ import (
 	"time"
 
 	fiber "github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/cors"
 	"github.com/the-hemant-parmar/pustak-react-go/backend/internal/book/handlers"
 	"github.com/the-hemant-parmar/pustak-react-go/backend/internal/book/repository"
 	"github.com/the-hemant-parmar/pustak-react-go/backend/internal/book/services"
@@ -36,6 +38,14 @@ func New(cfg *config.Config, log logger.Logger) (*Server, error) {
 	service := services.NewBookService(repo, log)
 	h := handlers.NewBookHandler(service, log)
 
+	// Middlewares
+	app.Use(cors.New(cors.Config{
+		AllowOrigins: "*",
+		AllowHeaders: "*",
+		AllowMethods: "*",
+	}))
+
+	// Routes
 	app.Post("/books", h.Create)
 	app.Get("/books", h.List)
 	app.Get("/books/:id", h.Get)

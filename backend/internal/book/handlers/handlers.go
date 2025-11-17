@@ -1,3 +1,4 @@
+// Package handlers defines the BookHandler here
 package handlers
 
 import (

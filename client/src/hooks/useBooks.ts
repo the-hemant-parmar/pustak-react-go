@@ -1,6 +1,13 @@
 import { useQuery } from "@tanstack/react-query";
 import { bookApi } from "../services/api/bookApi";
 
+export function useBooks() {
+  return useQuery({
+    queryKey: ["books"],
+    queryFn: () => bookApi.listBooks(),
+  });
+}
+
 export function useNearbyBooks(lat: number, lng: number) {
   return useQuery({
     queryKey: ["books", lat, lng],

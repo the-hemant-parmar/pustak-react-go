@@ -1,3 +1,4 @@
+// Package dto represent the Data Transfer Objects for the book service
 package dto
 
 type CreateBookRequest struct {

@@ -1,3 +1,4 @@
+// Package repository
 package repository
 
 import (
@@ -41,6 +42,10 @@ func NewMongoRepo(db *mongo.Database, logger logger.Logger) BookRepository {
 }
 
 func (m *mongoRepo) Create(ctx context.Context, b *domain.Book) (*domain.Book, error) {
+	if b.ID == "" {
+		b.ID = primitive.NewObjectID().Hex()
+	}
+
 	bsonDoc, err := toBSON(b)
 	if err != nil {
 		return nil, err
@@ -63,7 +68,7 @@ func (m *mongoRepo) GetByID(ctx context.Context, id string) (*domain.Book, error
 	if err != nil {
 		return nil, err
 	}
-	out.ID = out.ID // keep string ID
+	out.ID = objID.Hex() // keep string ID
 	return &out, nil
 }
 

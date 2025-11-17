@@ -1,3 +1,4 @@
+// Package domain represent the structue of elements
 package domain
 
 type GeoPoint struct {

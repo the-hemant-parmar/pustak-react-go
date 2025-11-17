@@ -2,9 +2,9 @@ export interface Book {
   id: string;
   title: string;
   author: string;
-  coverUrl: string;
+  coverUrl?: string;
   price?: number;
-  availableForLending: boolean;
+  lend: boolean;
   location: {
     lat: number;
     lng: number;
