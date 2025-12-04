@@ -1,5 +1,6 @@
-import { useBooks } from "../../hooks/useBooks";
-import BookCard from "../../components/Book/BookCard";
+import { useBooks } from "@/hooks/useBooks";
+import { BookCard } from "@/components/book/bookCard";
+import { Button } from "@/components/ui/button";
 
 export default function HomePage() {
   // const lat = 12.912; // placeholder
@@ -12,6 +13,9 @@ export default function HomePage() {
       {books?.map((b) => (
         <BookCard key={b.id} book={b} />
       ))}
+      <Button className="p-6">
+        CLICK ME
+      </Button>
     </div>
   );
 }
