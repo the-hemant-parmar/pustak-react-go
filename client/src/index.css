@@ -115,7 +115,14 @@
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
   }
+
+  /* For debugging purpose uncomment the below lines  */
+  /* * {
+    outline: 1px solid red !important; 
+  } */
+
 }

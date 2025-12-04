@@ -1,12 +1,27 @@
-import { type Book } from "../../types/book";
-import Placeholder from  "../../assets/Gemini_Generated_Image_hwyne4hwyne4hwyn-Cpd7Tx4m.png";
+import { type Book } from "@/types/book";
+import Placeholder from "@/assets/PlaceholderImage.png";
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import { Button } from "@/components/ui/button";
 
 export const BookCard = ({ book }: { book: Book }) => {
   return (
-    <div className="p-4 border rounded-xl shadow-sm hover:shadow-md transition">
-      <img src={book.coverUrl ?? Placeholder} className="h-48 w-full object-cover rounded-md" />
-      <h3 className="font-semibold text-lg mt-2">{book.title}</h3>
-      <p className="text-sm text-gray-600">{book.author}</p>
-    </div>
+    <Card>
+      <CardHeader>
+        <img src={book.coverUrl ?? Placeholder} className="h-64 w-full object-cover rounded-md" />
+      </CardHeader>
+      <CardContent>
+        <CardTitle>
+          {book.title}
+        </CardTitle>
+        <CardDescription>
+          {book.author}
+        </CardDescription>
+      </CardContent>
+      <CardFooter>
+        <Button>Learn More</Button>
+      </CardFooter>
+
+    </Card>
   );
 }
+
